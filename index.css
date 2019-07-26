@@ -98,7 +98,7 @@ button:hover {
 }
 
 #chart-open-button {
-  border: 1px solid black;
+  border: 2px solid black;
   text-align: center;
   background: rgb(158, 158, 158, 0.5);
 }
@@ -186,7 +186,7 @@ button:hover {
 
 .close-button-box {
   position: fixed;
-  top: 76px;
+  top: 59px;
   right: 10px;
   z-index: 2;
 }
@@ -198,7 +198,7 @@ button:hover {
 
 .close-button {
   font-size: 14px;
-  border: 2px solid grey;
+  border: 2px solid black;
   background: white;
 }
 
