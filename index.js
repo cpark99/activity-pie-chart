@@ -156,7 +156,7 @@ function addFirstInputRow() {
     "</div>"
   )
   $('.js-activity-name').append(
-    '<input type="text" id="activity-input-1" name="activity-input-1" class="form-input input-row" placeholder="Get ready for school"/>' +
+    '<input type="text" id="activity-input-1" name="activity-input-1" class="form-input input-row" value="Get ready for school"/>' +
     '<p id="activity-validation-message-1" class="validation-message-1 validation-message hidden"></p>'
   )
   addSelectOptions();
