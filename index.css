@@ -58,7 +58,7 @@ button:hover {
 #pie-chart-content {
   margin: 10px;
   border: 1px solid black;
-  padding: 10px;
+  padding: 20px 10px;
   overflow: auto;
   background: white;
 }
@@ -72,18 +72,12 @@ button:hover {
 
 #pie-chart-form-header {
   font-size: 16px;
+  margin-top: 0;
 }
 
 #chart-form {
   display: flex;
   flex-direction: column;
-}
-
-#add-row-button {
-  width: 70px;
-  align-self: center;
-  margin-top: 20px;
-  font-size: 12px;
 }
 
 #form-submit-button {
@@ -112,6 +106,7 @@ button:hover {
 
 #foot-note {
   text-align: center;
+  font-size: 10px;
 }
 
 .pie-chart-area {
@@ -140,7 +135,7 @@ button:hover {
 
 .form-input {
   width: 120px;
-  height: 15.5px;
+  height: 20px;
   font-size: 12px;
 }
 
@@ -166,19 +161,43 @@ button:hover {
 }
 
 .input-select {
-  height: 15.5px;
+  height: 20px;
 }
 
 .close-button-box {
   position: fixed;
-  top: 80px;
-  right: 14px;
+  top: 84px;
+  right: 10px;
   z-index: 2;
 }
 
 .close-button-box:hover {
   cursor: pointer;
   color: grey;
+}
+
+.close-button {
+  font-size: 14px;
+  border: 2px solid grey;
+  background: white;
+}
+
+.chart-form-button {
+  background: rgb(235, 234, 234);
+  border: 1px solid black;
+  color: black;
+}
+
+.row-button {
+  width: 70px;
+  height: 20px;
+  align-self: center;
+  margin: 20px 10px 0 10px;
+  font-size: 12px;
+}
+
+.form-row-buttons {
+  align-self: center;
 }
 
 @media (min-width: 568px) {
