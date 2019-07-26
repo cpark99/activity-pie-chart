@@ -186,7 +186,7 @@ button:hover {
 
 .close-button-box {
   position: fixed;
-  top: 59px;
+  top: 76px;
   right: 10px;
   z-index: 2;
 }
@@ -198,7 +198,7 @@ button:hover {
 
 .close-button {
   font-size: 14px;
-  border: 2px solid black;
+  border: 2px solid gray;
   background: white;
 }
 
