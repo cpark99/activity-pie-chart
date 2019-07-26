@@ -4,11 +4,6 @@ var rowCount = 1;
 var data = [];
 var showChart = false;
 
-function setDefaultOptions() {
-  $('#start-hour-1').val(6);
-  $('#end-hour-1').val(7);
-}
-
 function addMinuteOptions() {
   var minutes = [];
 
@@ -29,7 +24,6 @@ function addMinuteOptions() {
       "<option value=" + i * 5 + " >" + i * 5 + "</option>"
     );
   }
-  setDefaultOptions();
 }
 
 // prettier-ignore
@@ -52,7 +46,7 @@ function addInputRow() {
     "</div>"
   )
   $('.js-end-times').append(
-    '<div id="end-input-item-' + rowCount + '">' +
+    '<div id="end-input-time-' + rowCount + '">' +
       '<div id="end-time-' + rowCount + '" class="input-row">' +
         '<select id="end-hour-' + rowCount + '" name="end-hour-' + rowCount + '" class="js-end-hour-' + rowCount + ' input-select" required>' +
         ' <option value="">--</option>' +
@@ -70,9 +64,17 @@ function addInputRow() {
   )
   $('.js-activity-name').append(
     '<input type="text" id="activity-input-' + rowCount + '" name="activity-input-' + rowCount + '" class="form-input input-row" placeholder="Activity #' + rowCount + '"/>' +
-    '<p id="activity-validation-message-' + rowCount + '" class="validation-message-' + rowCount + ' validation-message hidden">*Enter valid Activity</p>'
+    '<p id="activity-validation-message-' + rowCount + '" class="validation-message-' + rowCount + ' validation-message hidden"></p>'
   )
   addSelectOptions();
+}
+
+function toggleDeleteButton() {
+  if (rowCount > 1) {
+    $("#delete-row-button").attr("disabled", false);
+  } else {
+    $("#delete-row-button").attr("disabled", true);
+  }
 }
 
 function handleAddRow() {
@@ -80,7 +82,24 @@ function handleAddRow() {
     e.preventDefault();
     rowCount++;
     addInputRow();
+    toggleDeleteButton();    
   });
+}
+
+function handleDeleteRow() {
+  $("#delete-row-button").click(e => {
+    e.preventDefault();
+    if (rowCount > 1) {
+      $("#input-item-" + rowCount).remove();
+      $("#end-input-time-" + rowCount).remove();
+      $("#activity-input-" + rowCount).remove();
+      rowCount--;
+      toggleDeleteButton();
+      // $(".validation-message").remove();
+      // hideValidationMessage(rowCount);
+      $('.validation-message').addClass('hidden').removeClass('visible-message')
+    }
+  })
 }
 
 function addSelectOptions() {
@@ -120,7 +139,7 @@ function addFirstInputRow() {
     "</div>"
   )
   $('.js-end-times').append(
-    '<div id="end-input-item-1">' +
+    '<div id="end-input-time-1">' +
       '<div id="end-time-1" class="input-row">' +
         '<select id="end-hour-1" name="end-hour-1" class="js-end-hour-1 input-select" required>' +
         ' <option value="">--</option>' +
@@ -138,15 +157,18 @@ function addFirstInputRow() {
   )
   $('.js-activity-name').append(
     '<input type="text" id="activity-input-1" name="activity-input-1" class="form-input input-row" placeholder="Get ready for school"/>' +
-    '<p id="activity-validation-message-1" class="validation-message-1 validation-message hidden">*Enter valid Activity</p>'
+    '<p id="activity-validation-message-1" class="validation-message-1 validation-message hidden"></p>'
   )
   addSelectOptions();
 }
 
+function setDefaultOptions() {
+  $('#start-hour-1').val(6);
+  $('#end-hour-1').val(7);
+}
+
 // prettier-ignore
 function loadForm() {
-  // need to create array for "hours" and "minutes"
-  // loop through arrays for option values (below)
   $(".js-form-inputs").append(
     '<div class="start-times input-column js-start-times">' +
       '<label for="start-time-1" class="form-label">Start time:</label>' +
@@ -157,7 +179,6 @@ function loadForm() {
     '<div class="activity-name js-activity-name">' +
       '<label for="activity-input-1" class="form-label">Activity:</label>' +
     "</div>"
-    // add a button to show more input selects (add to html page?) ***
   );
 }
 
@@ -244,7 +265,6 @@ function loadPieChart() {
   if ($(".visible-message").length != 0) {
     $("#pie-chart").remove();
   }
-  // $('#pie-chart').css({'width': '430px','height': '210px'});
 }
 
 function getInputValues() {
@@ -341,7 +361,9 @@ function handleCloseButton() {
 function handleWidgetStart() {
   loadForm();
   handleAddRow();
+  handleDeleteRow();
   addFirstInputRow();
+  setDefaultOptions();
   handleFormSubmit();
   handleCloseButton();
 }

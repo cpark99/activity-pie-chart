@@ -12,11 +12,14 @@ html {
   box-sizing: inherit;
 }
 
-/* 'body' is only for demo */
+/* 'body' element is only for demo */
 body {
-  background-image: linear-gradient(to bottom, white, green);
-  height: 200vh;
+  height: 150vh;
+  background: url('./background.jpg');
+  background-repeat: no-repeat;
+  background-size: 100vw 150vh;
 }
+/* remove 'body' for deployment */
 
 h1 {
   padding: 10px;
@@ -85,6 +88,7 @@ button:hover {
   height: 30px;
   align-self: center;
   margin-top: 20px;
+  margin-bottom: 40px;
 }
 
 #chart-button-frame {
@@ -107,13 +111,29 @@ button:hover {
 #foot-note {
   text-align: center;
   font-size: 10px;
+  position: relative;
+  bottom: 40px;
+}
+
+#delete-row-button:disabled {
+  background: rgb(238, 237, 237);
+  color: lightgray;
+  border: 1px solid lightgray;
+}
+
+#pie-chart-modal {
+  position: fixed;
+  overflow: auto;
+  width: 100%;
+  height: 80%;
+  top: 78px;
 }
 
 .pie-chart-area {
   min-width: 600px;
   margin-left: -80px;
   margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 .activity-name {
@@ -166,7 +186,7 @@ button:hover {
 
 .close-button-box {
   position: fixed;
-  top: 84px;
+  top: 76px;
   right: 10px;
   z-index: 2;
 }
@@ -183,7 +203,7 @@ button:hover {
 }
 
 .close-button:hover {
-  border: 2px solid red;
+  border: 2px solid lightgray;
 }
 
 .chart-form-button {
@@ -213,7 +233,7 @@ button:hover {
   margin-top: 0;
 }
 
-@media (min-width: 568px) {
+@media (min-width: 1024px) {
   #content-divider {
     flex-direction: row;
   }
