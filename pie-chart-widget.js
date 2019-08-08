@@ -411,7 +411,7 @@ function loadWidgetHTML() {
           '<div class="pie-chart-area"></div>' +
         '</div>' +
       '</div>' +
-      '<p id="foot-note">*This widget was designed and developed by cpwebdeveloper99@gmail.com</p>' +
+      '<p id="foot-note">*This widget was created by cpwebdeveloper99@gmail.com</p>' +
     '</section>' +
     '<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/cuid/1.3.8/browser-cuid.min.js"></script>'
   )
