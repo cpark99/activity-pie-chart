@@ -377,4 +377,49 @@ function handleWidgetOpen() {
   handleWidgetStart();
 }
 
-$(handleWidgetOpen);
+function loadWidgetHTML() {
+  // replace jQuery target with any element from target HTML file
+  $("#pie-chart-widget-placeholder-js").append(
+    '<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>' +
+    '<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-piechart-outlabels"></script>' +
+    '<div id="chart-button-frame">' +
+      '<div id="chart-open-button">' +
+        '<h4>Activity</h4>' +
+        '<h4 class="no-margin-top">Calculator</h4>' +
+        '<h3>+</h3>' +
+        '<h5 class="no-margin-top">Click me!</h5>' +
+      '</div>' +
+    '</div>' +
+    '<section id="pie-chart-modal" class="hidden">' +
+      '<div id="pie-chart-content">' +
+        '<h1 id="pie-chart-header">Pie Chart of How I Divide My 24-Hour Day</h1>' +
+        '<div id="content-divider">' +
+          '<div class="pie-chart-form">' +
+            '<form id="chart-form">' +
+              '<h2 id="pie-chart-form-header">Enter your daily activities:</h2>' +
+              '<div class="close-button-box">' +
+                '<h2 class="close-button">close X</h2>' +
+              '</div>' +
+              '<div id="form-inputs" class="js-form-inputs"></div>' +
+              '<div class="form-row-buttons">' +
+                '<button id="add-row-button" class="chart-form-button row-button">Add</button>' +
+                '<button id="delete-row-button" class="chart-form-button row-button" disabled>Delete</button>' +
+              '</div>' +
+              '<button type="submit" id="form-submit-button" class="chart-form-button">Submit</button>' +
+            '</form>' +
+          '</div>' +
+          '<div class="pie-chart-area"></div>' +
+        '</div>' +
+      '</div>' +
+      '<p id="foot-note">*This widget was designed and developed by cpwebdeveloper99@gmail.com</p>' +
+    '</section>' +
+    '<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/cuid/1.3.8/browser-cuid.min.js"></script>'
+  )
+}
+
+function loadWidget() {
+  loadWidgetHTML();
+  handleWidgetOpen();
+}
+
+$(loadWidget);
