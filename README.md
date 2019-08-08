@@ -4,6 +4,8 @@
 
 ## Instructions
 
+### **MUST KEEP "This widget was developed by cpwebdeveloper99@gmail.com" **
+
 ### Pre-requirements
 
 - Your website uses jQuery
