@@ -21,25 +21,11 @@ body {
 }
 /* remove 'body' for deployment */
 
-h1 {
+#website-header {
   padding: 10px;
 }
 
-h3 {
-  margin: 5px;
-}
-
-h4 {
-  margin: 15px 10px 0 10px;
-}
-
-h5 {
-  margin-bottom: 15px;
-}
-
-button:hover {
-  cursor: pointer;
-}
+/* BELOW IS REQUIRED CSS STYLE FOR PIE CHART WIDGET */
 
 #start-time,
 #end-time {
@@ -129,6 +115,18 @@ button:hover {
   top: 78px;
 }
 
+.button-plus-sign {
+  margin: 5px;
+}
+
+.button-top-text {
+  margin: 15px 10px 0 10px;
+}
+
+.button-bottom-text {
+  margin-bottom: 15px;
+}
+
 .pie-chart-area {
   min-width: 600px;
   margin-left: -80px;
@@ -167,6 +165,10 @@ button:hover {
 .input-row {
   display: flex;
   margin-top: 5px;
+}
+
+.pie-chart-widget-button:hover {
+  cursor: pointer;
 }
 
 .validation-message {

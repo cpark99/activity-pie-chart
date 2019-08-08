@@ -384,10 +384,10 @@ function loadWidgetHTML() {
     '<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-piechart-outlabels"></script>' +
     '<div id="chart-button-frame">' +
       '<div id="chart-open-button">' +
-        '<h4>Activity</h4>' +
-        '<h4 class="no-margin-top">Calculator</h4>' +
-        '<h3>+</h3>' +
-        '<h5 class="no-margin-top">Click me!</h5>' +
+        '<h4 class="button-top-text">Activity</h4>' +
+        '<h4 class="no-margin-top button-top-text">Calculator</h4>' +
+        '<h3 class="button-plus-sign">+</h3>' +
+        '<h5 class="no-margin-top button-bottom-text">Click me!</h5>' +
       '</div>' +
     '</div>' +
     '<section id="pie-chart-modal" class="hidden">' +
@@ -402,10 +402,10 @@ function loadWidgetHTML() {
               '</div>' +
               '<div id="form-inputs" class="js-form-inputs"></div>' +
               '<div class="form-row-buttons">' +
-                '<button id="add-row-button" class="chart-form-button row-button">Add</button>' +
-                '<button id="delete-row-button" class="chart-form-button row-button" disabled>Delete</button>' +
+                '<button id="add-row-button" class="chart-form-button row-button pie-chart-widget-button">Add</button>' +
+                '<button id="delete-row-button" class="chart-form-button row-button pie-chart-widget-button" disabled>Delete</button>' +
               '</div>' +
-              '<button type="submit" id="form-submit-button" class="chart-form-button">Submit</button>' +
+              '<button type="submit" id="form-submit-button" class="chart-form-button pie-chart-widget-button">Submit</button>' +
             '</form>' +
           '</div>' +
           '<div class="pie-chart-area"></div>' +
