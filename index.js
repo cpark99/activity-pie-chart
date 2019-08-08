@@ -6,7 +6,6 @@ var showChart = false;
 
 function addMinuteOptions() {
   var minutes = [];
-
   $(".js-start-minute-" + rowCount).append(
     "<option value=" + 5 + " >0" + 5 + "</option>"
   );
@@ -95,8 +94,6 @@ function handleDeleteRow() {
       $("#activity-input-" + rowCount).remove();
       rowCount--;
       toggleDeleteButton();
-      // $(".validation-message").remove();
-      // hideValidationMessage(rowCount);
       $('.validation-message').addClass('hidden').removeClass('visible-message')
     }
   })
@@ -276,9 +273,9 @@ function getInputValues() {
     var startMinute = parseInt($("#start-minute-" + (i + 1)).val(), 10);
     var endHour = parseInt($("#end-hour-" + (i + 1)).val(), 10);
     var endMinute = parseInt($("#end-minute-" + (i + 1)).val(), 10);
-    if ($("#start-meridiem-" + (i + 1)).val() === "2") {
+    if ($("#start-meridiem-" + (i + 1)).val() === "2") { // adjust for PM values
       startHour = (startHour + 12) * 60;
-      if (startHour === 1440) {
+      if (startHour === 1440) { // adjust for 12 PM case
         startHour = 720;
       }
     } else {
@@ -290,10 +287,10 @@ function getInputValues() {
     startTimes.push(startHour + startMinute);
     startHour = 0;
     startMinute = 0;
-    if ($("#end-meridiem-" + (i + 1)).val() === "2") {
+    if ($("#end-meridiem-" + (i + 1)).val() === "2") { // adjust for PM values
       endHour = (endHour + 12) * 60;
     } else {
-      if (endHour === 12) {
+      if (endHour === 12) { // adjust for 12 AM (end) case
         endHour = 24;
         if (parseInt($("#start-hour-" + (i + 1)).val(), 10) === 12 && $("#start-meridiem-" + (i + 1)).val() === "1") {
           endHour = 0;
