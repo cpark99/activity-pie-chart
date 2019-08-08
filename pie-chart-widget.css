@@ -25,7 +25,7 @@ body {
   padding: 10px;
 }
 
-/* BELOW IS REQUIRED CSS STYLE FOR PIE CHART WIDGET */
+/* BELOW IS REQUIRED CSS STYLE FOR PIE CHART WIDGET (copy and paste below into main .css file) */
 
 #start-time,
 #end-time {
