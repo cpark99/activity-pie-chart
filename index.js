@@ -258,7 +258,7 @@ function loadPieChart() {
       }
     }
   });
-  data = [];
+  data = []; // remove data from array
   if ($(".visible-message").length != 0) {
     $("#pie-chart").remove();
   }
@@ -307,7 +307,7 @@ function getInputValues() {
   }
   for (var i = 0; i < startTimes.length; i++) {
     var totalTime = endTimes[i] - startTimes[i];
-    if (totalTime <= 0) {
+    if (totalTime <= 0) { // validate total time for activity
       showValidationMessage(i + 1);
       $("#start-validation-message-" + (i + 1)).css({ opacity: 0 });
       $("#end-validation-message-" + (i + 1)).css({ opacity: 1 });
