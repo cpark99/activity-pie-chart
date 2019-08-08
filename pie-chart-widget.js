@@ -378,7 +378,7 @@ function handleWidgetOpen() {
 }
 
 function loadWidgetHTML() {
-  // replace jQuery target with any element from target HTML file
+  // replace "#pie-chart-widget-placeholder-js" with any element from target HTML file
   $("#pie-chart-widget-placeholder-js").append(
     '<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>' +
     '<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-piechart-outlabels"></script>' +
