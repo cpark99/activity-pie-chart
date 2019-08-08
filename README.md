@@ -4,7 +4,7 @@
 
 ## Instructions
 
-### **MUST KEEP "This widget was developed by cpwebdeveloper99@gmail.com" **
+### **MUST KEEP "This widget was created by cpwebdeveloper99@gmail.com" **
 
 ### Pre-requirements
 
